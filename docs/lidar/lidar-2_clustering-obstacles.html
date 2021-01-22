@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lidar Obstacle Detection</title>
+</head>
+<body>
+
+<div id="content" class="ureact-app__body"><div data-test="concept-main" class="_main--main--3mpPA"><div class="_main--content-container--ILkoI"><div><div class="index--container--2OwOl"><div class="index--atom--lmAIo layout--content--3Smmq"><div class="ltr"><div class="index-module--markdown--2MdcR ureact-markdown "><h1 id="clustering-obstacles">Clustering Obstacles</h1>
+</div></div><span></span></div></div></div><div><div class="index--container--2OwOl"><div class="index--atom--lmAIo layout--content--3Smmq"><div><div class="video-atom--video--1rflY"><div class="vds-loading vds-loading--md" role="status" aria-label="Loading…"><div class="vds-loading__children"><div class="_1UN_ejel6QzQCa_M5Nn4bu"><div class="_2lGVVA99VY-snhn6dzPP-z"><div class="_3h3jXAJ1HmC2_sa49itKME _2nvHtsDYiD14gMJ8MpUp2c"><div class=""><iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/QCb00ohqITw?showinfo=0&amp;rel=0&amp;autohide=1&amp;vq=hd720&amp;hl=en-us&amp;cc_load_policy=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fclassroom.udacity.com&amp;widgetid=5" id="widget6"></iframe></div></div></div></div></div></div></div></div><span></span></div></div></div><div><div class="index--container--2OwOl"><div class="index--atom--lmAIo layout--content--3Smmq"><div class="ltr"><div class="index-module--markdown--2MdcR ureact-markdown "><p>You have a way to segment points and recognize which ones represent obstacles for your car. It would be great to break up and group those obstacle points, especially if you want to do multiple object tracking with cars, pedestrians, and bicyclists, for instance. One way to do that grouping and cluster point cloud data is called euclidean clustering. </p>
+<h2 id="euclidean-clustering">Euclidean Clustering</h2>
+<p>The idea is you associate groups of points by how close together they are. To do a nearest neighbor search efficiently, you use a KD-Tree data structure which, on average, speeds up your look up time from O(n) to O(log(n)). This is because the tree allows you to better break up your search space. By grouping points into regions in a KD-Tree, you can avoid calculating distance for possibly thousands of points just because you know they are not even considered in a close enough region.</p>
+<p>In this lesson, you will begin by seeing how to do Euclidean clustering using built-in PCL functions. Next, you will write your own clustering algorithm using a KD-Tree. <strong><em>Your implementation will be used in your project submission, so be sure to complete the implementation in the exercises that follow!</em></strong></p>
+</div></div><span></span></div></div></div></div><div><div class="_main--footer-container--3vC-_">
+<!--	<button class="vds-button vds-button--secondary" type="button"><span class="vds-button__content">Next</span></button> -->
+</div></div><noscript></noscript><noscript></noscript></div></div>
+
+</body>
+</html>
