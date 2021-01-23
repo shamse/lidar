@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lidar Obstacle Detection</title>
+</head>
+<body>
+
+<h1 id="searching-points-in-a-kd-tree">Searching Points in a KD-Tree</h1>
+
+<iframe width="770" height="433" src="https://www.youtube.com/embed/4luIWnHiEJQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>Once points are able to be inserted into the tree, the next step is being able to search for nearby points inside the tree compared to a given target point. Points within a distance of <code>distanceTol</code> are considered to be nearby.  The KD-Tree is able to split regions and allows certain regions to be completely ruled out, speeding up the process of finding nearby neighbors. </p>
+
+<h2 id="instructions">Instructions</h2>
+
+<ul>
+<li>In <code>src/quiz/cluster/kdtree.h</code> fill in the <code>search</code> function.</li>
+<li>Verify that when the code is run, line 115 of <code>cluster.cpp</code> produces the following output:<pre><code>Test Search
+<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,
+</code></pre></li>
+<li>Experiment by using different point values in the call to <code>search</code> in line 115 of <code>cluster.cpp</code>. Use target points that are close to points in the tree. If the distance tolerance is large enough then those expected nearby point ids should be returned.</li>
+</ul>
+
+<h2 id="compile-run">Compile/Run</h2>
+
+<ul>
+<li>In <code>src/quiz/cluster</code>, <code>mkdir build</code></li>
+<li><code>cd build</code></li>
+<li><code>cmake ..</code></li>
+<li><code>make</code></li>
+<li><code>./quizCluster</code></li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<iframe width="770" height="433" src="https://www.youtube.com/embed/EFgF_C_tOkw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+</body>
+</html>
