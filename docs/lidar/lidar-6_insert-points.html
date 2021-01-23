@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lidar Obstacle Detection</title>
+</head>
+<body>
+
+<h1 id="insert-points">Insert Points</h1>
+
+<h2 id="starter-code-walkthrough">Starter Code Walkthrough</h2>
+
+<iframe width="770" height="433" src="https://www.youtube.com/embed/kYhS20w1Bnk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>The previous concept showed how points are inserted into the tree. How about doing this in C++? Implementing a recursive helper function to insert points can be a very nice way to update Nodes. The basic idea is that the tree is traversed until the Node it arrives at is NULL, in which case a new Node is created and replaces the NULL Node. For assigning a Node, one way is to use a double pointer. You could pass in a pointer to the node, starting at root, and then when you want to replace a node you can dereference the double pointer and assign it to the newly created Node. Another way of achieving this is by using a pointer reference as well. For references, check out the code below for doing insertion in C++ but with a binary tree. The insertion for a KD-Tree will be very similar to this.</p>
+
+<h2 id="example-of-insertion-for-binary-tree">Example of Insertion for Binary Tree</h2>
+
+<h4 id="double-pointer">Double Pointer</h4>
+
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(BinaryTreeNode **node, <span class="hljs-keyword">int</span> data)</span>
+   </span>{
+      <span class="hljs-keyword">if</span>(*node == <span class="hljs-literal">NULL</span>)
+      {
+        *node = getNewNode(data);
+      }
+      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(data &lt; (*node)-&gt;data)
+      {
+        insert(&amp;(*node)-&gt;left, data);
+      }
+      <span class="hljs-keyword">else</span>
+      {
+        insert(&amp;(*node)-&gt;right, data);
+      }
+   }
+</code></pre>
+
+<h4 id="pointer-reference">Pointer Reference</h4>
+
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(BinaryTreeNode *&amp;node, <span class="hljs-keyword">int</span> data)</span>
+   </span>{
+      <span class="hljs-keyword">if</span>(node == <span class="hljs-literal">NULL</span>)
+      {
+        node = getNewNode(data);
+      }
+      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(data &lt; node-&gt;data)
+      {
+        insert(node-&gt;left, data);
+      }
+      <span class="hljs-keyword">else</span>
+      {
+        insert(node-&gt;right, data);
+      }
+   }
+</code></pre>
+
+<h2 id="instructions">Instructions</h2>
+
+<p>Check out the quiz and try getting the resulting image from the previous concept, visually showing how each point is separating the x/y regions.</p>
+
+<ul>
+<li>In <code>src/quiz/cluster/kdtree.h</code> fill in the <code>insert</code> function.</li>
+</ul>
+
+<h2 id="compile-run">Compile/Run</h2>
+
+<ul>
+<li>In <code>src/quiz/cluster</code>, <code>mkdir build</code></li>
+<li><code>cd build</code></li>
+<li><code>cmake ..</code></li>
+<li><code>make</code></li>
+<li><code>./quizCluster</code></li>
+</ul>
+
+<div><div class="index--container--2OwOl"><div class="index--atom--lmAIo layout--content--3Smmq"><div class="ltr"><div class="index-module--markdown--2MdcR ureact-markdown "><h2 id="solution">Solution</h2>
+</div></div><span></span></div></div></div>
+
+<iframe width="770" height="433" src="https://www.youtube.com/embed/CAG021S8Mco" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</body>
+</html>
